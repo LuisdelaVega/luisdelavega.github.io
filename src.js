@@ -30,7 +30,7 @@ const values = [
   'Aris tries and fails to speak spanish',
   '"Ok, be cool"'
 ]
-let usedNums = {}
+let usedVals = {}
 const squares = document.querySelectorAll('.square')
 
 function deselectSquare(square) {
@@ -45,7 +45,7 @@ squares.forEach(square => square.addEventListener('click', selectSquare))
 
 function newCard() {
 	//Starting loop through each square card
-	for(let i = 0; i < 24; i++) {  //<--always this code for loops. change in red
+	for(let i = 0; i < 24; i++) {
 		setSquare(i)
 	}
 }
@@ -57,26 +57,19 @@ function setSquare(thisSquare) {
 	do {
 		newVal = values[getNewNum()]
 	}
-	while (usedNums[newVal])
+	while (usedVals[newVal])
 	
-  usedNums[newVal] = true
-  const square = document.getElementById(currSquare)
-  square.style.setProperty('--fontSize', `${newVal.length}pt`)
-	square.innerHTML = newVal
+  usedVals[newVal] = true
+  document.getElementById(currSquare).innerHTML = newVal
 }
 
 function getNewNum() {
 	return Math.floor(Math.random() * values.length)
-	
 }
 
 function anotherCard() {
-  // Reset the squares
+  // Reset the squares, values and create a new card
   squares.forEach(square => deselectSquare(square))
-	// for(let i=1; i<usedNums.length; i++) {
-	//   usedNums[i] = false
-  // }
-  usedNums = {}
-	
+  usedVals = {}
   newCard()
 }
