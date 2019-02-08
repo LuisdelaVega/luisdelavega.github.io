@@ -44,27 +44,27 @@ function selectSquare() {
 squares.forEach(square => square.addEventListener('click', selectSquare))
 
 function newCard() {
-	//Starting loop through each square card
-	for(let i = 0; i < 24; i++) {
-		setSquare(i)
-	}
+  //Starting loop through each square card
+  for(let i = 0; i < 24; i++) {
+    setSquare(i)
+  }
 }
 
 function setSquare(thisSquare) {
-	let currSquare = `square${thisSquare}`
-	let newVal
-	
-	do {
-		newVal = values[getNewNum()]
-	}
-	while (usedVals[newVal])
-	
+  let currSquare = `square${thisSquare}`
+  let newVal
+
+  do {
+    newVal = values[getNewNum()]
+  }
+  while (usedVals[newVal])
+
   usedVals[newVal] = true
   document.getElementById(currSquare).innerHTML = newVal
 }
 
 function getNewNum() {
-	return Math.floor(Math.random() * values.length)
+  return Math.floor(Math.random() * values.length)
 }
 
 function anotherCard() {
