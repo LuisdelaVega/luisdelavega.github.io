@@ -1,25 +1,74 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | MovementMachineLearning</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>  
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/build.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">MovementMachineLearning</div>
-      </div>
+<html>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Cambay' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8" />
+
+  <title>Bingo</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body onload="newCard()">
+
+  <div id="container">
+    <!-- <div id="header">
+      <h1>Create a BINGO Card</h1>
+    </div> -->
+    <div id="content">
+      <div class="table-banner"></div>
+      <table id="bingotable">
+        <!-- <tr>
+          <th class="orange">B</th>
+          <th class="orange">I</th>
+          <th class="orange">N</th>
+          <th class="orange">G</th>
+          <th class="orange">O</th>
+        </tr> -->
+        <tr>
+          <td id="square0" class="square"> &nbsp;</td>
+          <td id="square1" class="square"> &nbsp;</td>
+          <td id="square2" class="square"> &nbsp;</td>
+          <td id="square3" class="square"> &nbsp;</td>
+          <td id="square4" class="square"> &nbsp;</td>
+        </tr>
+        <tr>
+          <td id="square5" class="square"> &nbsp;</td>
+          <td id="square6" class="square"> &nbsp;</td>
+          <td id="square7" class="square"> &nbsp;</td>
+          <td id="square8" class="square"> &nbsp;</td>
+          <td id="square9" class="square"> &nbsp;</td>
+        </tr>
+        <tr>
+          <td id="square10" class="square"> &nbsp;</td>
+          <td id="square11" class="square"> &nbsp;</td>
+          <td id="freesquare">POOF!</td>
+          <td id="square12" class="square"> &nbsp;</td>
+          <td id="square13" class="square"> &nbsp;</td>
+        </tr>
+        <tr>
+          <td id="square14" class="square"> &nbsp;</td>
+          <td id="square15" class="square"> &nbsp;</td>
+          <td id="square16" class="square"> &nbsp;</td>
+          <td id="square17" class="square"> &nbsp;</td>
+          <td id="square18" class="square"> &nbsp;</td>
+        </tr>
+        <tr>
+          <td id="square19" class="square"> &nbsp;</td>
+          <td id="square20" class="square"> &nbsp;</td>
+          <td id="square21" class="square"> &nbsp;</td>
+          <td id="square22" class="square"> &nbsp;</td>
+          <td id="square23" class="square"> &nbsp;</td>
+        </tr>
+      </table>
     </div>
-  </body>
+
+    <p><a href="#" onclick="anotherCard()">Click here</a> to create a new card</p>
+
+    <script type="text/javascript" src="src.js"></script>
+
+</body>
+
 </html>

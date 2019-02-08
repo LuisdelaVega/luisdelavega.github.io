@@ -1,0 +1,68 @@
+body {
+  background: rgb(53, 53, 53);
+  display: flex;
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20pt;
+  font-weight: 600;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  color: white;
+}
+
+p a {
+  text-decoration: none;
+  color: #f1c40f;
+}
+
+#freesquare {
+  font-family: Helvetica;
+  margin: 0 auto;
+  background: #9261a51c;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15pt;
+  background-image: url(./atpGasm.png);
+  background-size: 100% 100%;
+}
+
+.table-banner {
+  margin: 0 auto;
+  width: 600px;
+  height: 84px;
+  background-image: url(./atp_bingo_banner.png);
+  background-size: 100%;
+}
+
+#bingotable {
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  border-collapse: collapse;
+  background: white;
+}
+
+td {
+  font-family: Helvetica;
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid black;
+  width: 20%;
+  font-size: 14px;
+}
+
+.orange {
+  background: #9b59b6;
+}
+
+.selected {
+  background: rgba(231, 5, 5, 0.863)
+}
