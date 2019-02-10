@@ -1,3 +1,4 @@
+// Values for the bingo squares
 const values = [
   'Aris forgets what day it is',
   'Aris mentions his car',
@@ -30,26 +31,12 @@ const values = [
   'Aris tries and fails to speak spanish',
   '"Ok, be cool"'
 ]
+
+function getNewNum() {
+  return Math.floor(Math.random() * values.length)
+}
+
 let usedVals = {}
-const squares = document.querySelectorAll('.square')
-
-function deselectSquare(square) {
-  (square || this).classList.remove('selected')
-}
-
-function selectSquare() {
-  this.classList.toggle('selected')
-}
-
-squares.forEach(square => square.addEventListener('click', selectSquare))
-
-function newCard() {
-  //Starting loop through each square card
-  for(let i = 0; i < 24; i++) {
-    setSquare(i)
-  }
-}
-
 function setSquare(thisSquare) {
   let currSquare = `square${thisSquare}`
   let newVal
@@ -63,9 +50,25 @@ function setSquare(thisSquare) {
   document.getElementById(currSquare).innerHTML = newVal
 }
 
-function getNewNum() {
-  return Math.floor(Math.random() * values.length)
+// Starting loop through each square card
+function newCard() {
+  for(let i = 0; i < 24; i++) {
+    setSquare(i)
+  }
 }
+
+// onClick action. Toggles the square's selected class
+function selectSquare() {
+  this.classList.toggle('selected')
+}
+
+function deselectSquare(square) {
+  square.classList.remove('selected')
+}
+
+// Get all squares and add the onClick functionality
+const squares = document.querySelectorAll('.square')
+squares.forEach(square => square.addEventListener('click', selectSquare))
 
 function anotherCard() {
   // Reset the squares, values and create a new card
